@@ -7,6 +7,8 @@ return array(
 	"URL_ROUTE_RULES"	=>	array(
 		"index"	=>	"Home/Index/index",
 		"register"	=>	"Home/Index/register",
+		"login"	=>	"Home/Index/login",
+		"logout"	=>	"Home/Index/logout",
 	),
 
 	//数据库
@@ -20,4 +22,5 @@ return array(
 	'DB_PREFIX' => '', // 数据库表前缀 
 	'DB_CHARSET'=> 'utf8', // 字符集
 	'DB_DEBUG'  =>  TRUE, // 数据库调试模式 开启后可以记录SQL日志
+
 );

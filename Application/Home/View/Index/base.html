@@ -5,6 +5,19 @@
 		<title><block name="title">标题</block></title>
 	</head>
 	<body>
+		<div>hello <?php echo session("name"); ?> </div>
+		<div>
+			<a href="/">index</a>
+			<a href="/register">register</a>
+			<?php
+				if(session("name")!==NULL){
+					echo '<a href="/logout">logout</a>';
+				}
+				else{
+					echo '<a href="/login">login</a>';
+				} 
+			?>
+		</div>
 		<block name="body">内容</block>
 	</body>
 </html>

@@ -5,9 +5,15 @@
 		<title>index</title>
 	</head>
 	<body>
+		<div>hello <?php echo session("name"); ?> </div>
+		<div>
+			<a href="/">index</a>
+			<a href="/register">register</a>
+			<?php
+ if(session("name")!==NULL){ echo '<a href="/logout">logout</a>'; } else{ echo '<a href="/login">login</a>'; } ?>
+		</div>
 		
-	<a href="/">index</a>
-	<a href="/register">register</a>
+
 
 	</body>
 </html>
