@@ -1,23 +1,60 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title><block name="title">标题</block></title>
+
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1">
+
+	    <title><block name="title">标题</block></title>
+
+	    <!-- Bootstrap Core CSS -->
+	    <link href="__PUBLIC__/Home/css/bootstrap.min.css" rel="stylesheet">
+
+	    <!-- Bootstrap Core CSS -->
+	    <link href="__PUBLIC__/Home/css/custom.css" rel="stylesheet">
+
+	    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+
 	</head>
+
 	<body>
-		<div>hello <?php echo session("name"); ?> </div>
-		<div>
-			<a href="/">index</a>
-			<a href="/register">register</a>
-			<?php
-				if(session("name")!==NULL){
-					echo '<a href="/logout">logout</a>';
-				}
-				else{
-					echo '<a href="/login">login</a>';
-				} 
-			?>
+		<div class="container" style="height:850px">
+		    <div align="center" >
+		        <img src="__PUBLIC__/Home/image/logo.png" class="img-responsive">
+		         <h3>
+		            <a href="/">index</a>&nbsp;&nbsp;<span">|</span>&nbsp;&nbsp;
+		            <a href="/article">article</a>&nbsp;&nbsp;<span">|</span>&nbsp;&nbsp;
+		            <a href="/register">register</a>&nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;
+		            <?php
+		                if(session("name")!==NULL){
+		                	echo '<a href="/exercise">exercise</a>&nbsp;&nbsp;<span>|</span>&nbsp;&nbsp';
+		                    echo '<a href="/logout">logout</a>';
+		                }
+		                else{
+		                    echo '<a href="/login">login</a>';
+		                } 
+		            ?>
+		        </h3>
+				<block name="body">内容</block>
+		    </div>
 		</div>
-		<block name="body">内容</block>
+
+		<div class="container" align="center">
+			<h5><span>Email : wangran8088@gmail.com | QQ : 492375757</span></h5>
+			<h5><span>Copyright © 2016-2016 TJUNSA</span></h5>
+		</div>
+
+	    <!-- jQuery -->
+	    <script src="__PUBLIC__/Home/js/jquery.js"></script>
+
+	    <!-- Bootstrap Core JavaScript -->
+	    <script src="__PUBLIC__/Home/js/bootstrap.min.js"></script>
+
 	</body>
+
 </html>

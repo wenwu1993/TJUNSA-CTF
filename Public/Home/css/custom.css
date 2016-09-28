@@ -1,0 +1,12 @@
+a,span {
+	color: #000000;
+}
+
+body {
+	/*background-color: #000000;*/
+	background: url('../image/default2.png') repeat;
+}
+
+hr {
+	border-top:1px solid #000000;
+}

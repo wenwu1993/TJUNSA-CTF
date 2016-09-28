@@ -9,6 +9,14 @@ return array(
 		"register"	=>	"Home/Index/register",
 		"login"	=>	"Home/Index/login",
 		"logout"	=>	"Home/Index/logout",
+		'exercise/:page\d'=>'Ctf/Index/exercise',
+		"exercise" =>"Ctf/Index/exercise",
+		'question/:id\d'=>'Ctf/Question/question',
+		"question"=>"Ctf/Question/question",
+		"base"=>"Ctf/Question/base",
+
+		'article/:id\d'	=>	'Article/Index/read',
+		"article"	=>	"Article/Index/index",
 	),
 
 	//数据库
@@ -23,4 +31,7 @@ return array(
 	'DB_CHARSET'=> 'utf8', // 字符集
 	'DB_DEBUG'  =>  TRUE, // 数据库调试模式 开启后可以记录SQL日志
 
+
+
+	'SHOW_PAGE_TRACE' =>true,// 显示页面Trace信息
 );

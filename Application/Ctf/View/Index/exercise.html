@@ -1,0 +1,65 @@
+<extend name="base" />
+
+<block name="title">exercise</block>
+
+<block name="headline"></block>
+
+<block name="body">
+    <h1 class="page-header">
+        TJUNSA
+        <small>exercise</small>
+    </h1>
+    	<div style='background: #f6f6f6;padding:10px;width:1050px auto;height:600px auto;'>
+    	
+
+    		<?php
+    			if ($_GET["page"]!==null) {
+    				$page=$_GET["page"];
+    			}
+    			else
+    				$page=1;
+    			
+				for ($i=5*($page-1); $list[$i]['id']!==null&&$i<(5*$page) ; $i++) { 
+					//echo var_dump($list);
+					echo '<li style="margin:10px;padding:2%;margin-bottom:2%;background: white;list-style: none;">
+							<a style="color:#666666;font-size:150%;text-decoration:none;" href="/question/'.$list[$i]['id'].'">题目：'.$list[$i]['name'].'</a></br></br>
+							<span style="color:#888888;paddiing:10px;margin-right:10%">题目来源：'.$list[$i]['source'].'</span>
+							<span style="color:#888888;paddiing:10px;margin-right:10%">难度：'.$list[$i]['difficult'].' </span>
+							<span style="color:#888888;paddiing:10px;margin-right:10%">已解答数：'.$list[$i]['didtimes'].' </span>
+							<span style="color:#888888;paddiing:10px;margin-right:10%">类型：'.$list[$i]['category'].'</span>
+						  </li>';
+					}
+				echo '<nav style="text-align:center">
+					  <ul class="pagination pagination-lg">';
+				
+				//echo $page;
+				if ($page==='1') {
+					echo '<li><a herf="/exercise/'.$page.'">&laquo;</a></li>';
+				}
+				else
+					echo '<li><a href="/exercise/'.($page-1).'">&laquo;</a></li>';
+
+					
+				for ($i=1; $i <=ceil(count($list,0)/5) ; $i++) { 
+					echo '<li><a href="/exercise/'.$i.'">'.$i.'</a></li>';
+				}
+						    
+				
+				if ($page==ceil(count($list,0)/5)) {
+				    	echo '<li><a href="/exercise/'.$page.'">&raquo;</a></li>';
+						 
+				    }
+				    else    
+				   		echo '<li><a href="/exercise/'.($page+1).'">&raquo;</a></li>';
+						 
+
+						echo ' </ul>	
+						</nav>';
+			
+
+
+			?>		  
+			
+				
+		</div>
+</block> 

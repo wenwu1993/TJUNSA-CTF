@@ -1,0 +1,24 @@
+<extend name="base" />
+
+<block name="title">article</block>
+
+<block name="headline"></block>
+
+<block name="body">
+    <h1 class="page-header">
+        TJUNSA
+        <small>article</small>
+    </h1>
+
+    <?php
+    	for($x=0;$x<count($article);$x++)
+    	{
+    		echo "\n<h2><a href='/article/".$article[$x]["id"]."'>".$article[$x]["name"]."</a></h2>\n";
+    		echo "<p class='lead'><span class='glyphicon glyphicon-edit'></span> By ".$article[$x]["author"]."</p>\n";
+    		echo "<p><span class='glyphicon glyphicon-time'></span>".$article[$x]["date"]."</p>\n";
+    		echo "<hr><img class='img-responsive' src='__PUBLIC__/Article/article/".$article[$x]["id"]."/default.png' alt=''><hr>\n";
+    		echo "<p>".$article[$x]["description"]."</p>\n";
+    		echo "<hr>\n";
+    	}
+    ?>
+</block> 
